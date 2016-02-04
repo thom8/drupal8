@@ -1,0 +1,10 @@
+- name: Hello World
+  command: 'echo "Hello Probo pal. If you are reading this output you have your first successful Probo build step. Probo gives you a fresh environment for each build, so you can run whatever you want. This build step is using the default Probo build plugin: Shell."'
+- name: Install Drupal
+  plugin: Drupal
+  runInstall: true
+  profileName: standard
+- name: Run Behat tests
+  command: 'cd /var/www/html/tests ; composer install ; ./bin/behat'
+- name: Hello Again
+  command: 'echo "You can use Probo to run automated tests like the previous step did. Or not. Probo is useful with or without tests."'
