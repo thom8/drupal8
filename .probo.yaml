@@ -5,6 +5,7 @@ steps:
     plugin: Drupal
     runInstall: true
     profileName: standard
+    clearCaches: false
   - name: Run Behat tests
     command: 'cd /var/www/html/tests ; composer install ; ./bin/behat'
   - name: Hello Again
