@@ -1,7 +1,7 @@
 <?php
 
 use Behat\Behat\Exception\PendingException;
-use Behat\Gherkin\Node\PyStringNode,
+use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Drupal\DrupalExtension\Context\RawDrupalContext;
 use Behat\Behat\Context\SnippetAcceptingContext;
