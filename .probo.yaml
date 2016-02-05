@@ -1,3 +1,4 @@
-- name: Hello World
-  command: 'echo "Hello Probo pal. If you are reading this output you have your first successful Probo build step. Probo gives you a fresh environment for each build, so you can run whatever you want. This build step is using the default Probo build plugin: Shell."'
+steps:
+  - name: Hello World
+    command: 'echo "Hello Probo pal. If you are reading this output you have your first successful Probo build step. Probo gives you a fresh environment for each build, so you can run whatever you want. This build step is using the default Probo build plugin: Shell."'
 
