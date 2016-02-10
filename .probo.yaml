@@ -7,6 +7,6 @@ steps:
     profileName: standard
     clearCaches: false
   - name: Run Behat tests
-    command: 'cd /var/www/html/tests ; composer install ; ./bin/behat'
+    command: 'drush cr ; cd /var/www/html/tests ; composer install ; ./bin/behat'
   - name: Hello Again
     command: 'echo "You can use Probo to run automated tests like the previous step did. Or not. Probo is useful with or without tests."'
