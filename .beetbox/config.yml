@@ -1,0 +1,11 @@
+---
+beet_domain: "probo-drupal8.local"
+beet_site_name: "Probo Beetbox"
+
+# Drupal settings.
+drupal_install_site: yes
+drupal_account_name: admin
+drupal_account_pass: admin
+
+# PHP config.
+#php_version: "7.0"
