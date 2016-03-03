@@ -8,4 +8,4 @@ drupal_account_name: admin
 drupal_account_pass: admin
 
 # PHP config.
-#php_version: "7.0"
+php_version: "7.0"
