@@ -1,4 +1,44 @@
 steps:
+
+  - name: Prepare
+    plugin: Script
+    script: |
+      echo 'exit 0' > /usr/sbin/policy-rc.d
+      curl -sL https://deb.nodesource.com/setup_4.x | bash -
+      apt-get install -y software-properties-common language-pack-en-base
+      LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
+      LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/apache2
+      apt-get -qq update
+      apt-get install -y \
+      libapache2-mod-php5.6 \
+      nodejs \
+      memcached \
+      php5.6 \
+      php5.6-cli \
+      php5.6-common \
+      php5.6-curl \
+      php5.6-dev \
+      php5.6-gd \
+      php5.6-intl \
+      php5.6-json \
+      php5.6-mcrypt \
+      php5.6-mbstring \
+      php5.6-memcache \
+      php5.6-mysql \
+      php5.6-opcache \
+      php5.6-readline \
+      php5.6-xml \
+      php5.6-zip \
+      php5.6-bcmath \
+      php5.6-ldap
+      ln -s /bin/true /usr/sbin/sendmail
+      a2dismod php5
+      a2enmod php5.6
+      apachectl graceful
+      php -v
+      node -v
+      npm -v
+
   - name: Hello World
     command: 'echo "Hello Probo pal. If you are reading this output you have your first successful Probo build step. Probo gives you a fresh environment for each build, so you can run whatever you want. This build step is using the default Probo build plugin: Shell."'
   - name: Install Drupal
@@ -6,7 +46,7 @@ steps:
     runInstall: true
     profileName: standard
     clearCaches: false
-  - name: Run Behat tests
-    command: 'drush cr ; cd /var/www/html/tests ; composer install ; ./bin/behat'
+#  - name: Run Behat tests
+#    command: 'drush cr ; cd /var/www/html/tests ; composer install ; ./bin/behat'
   - name: Hello Again
     command: 'echo "You can use Probo to run automated tests like the previous step did. Or not. Probo is useful with or without tests."'
